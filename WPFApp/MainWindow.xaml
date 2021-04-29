@@ -1,0 +1,49 @@
+﻿<Window x:Class="WPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d" FontSize="22" Loaded="Window_Loaded"
+        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+    <Window.Background>
+        <ImageBrush ImageSource="/PokemonBackground.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" MinHeight="80" />
+            <RowDefinition Height="*" MinHeight="200" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" x:Name="pokemonInfo" HorizontalAlignment="Center" Width="600" Background="#4C000000">
+            <TextBlock x:Name="nameLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="36" FontFamily="Times New Roman" FontWeight="Bold"/>
+            <TextBlock x:Name="idLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock x:Name="typeLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock Text="" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock x:Name="ddtLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock x:Name="ndtLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock x:Name="ddfLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock x:Name="hdfLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+            <TextBlock x:Name="ndfLine" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="previousPokemonButton" Padding="15" Margin="15" Click="previousPokemonButton_Click" Content="Previous"/>
+            <Button x:Name="nextPokemonButton" Padding="15" Margin="15" Click="nextPokemonButton_Click" Content="Next"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="inputText" Width="150" HorizontalAlignment="Center" Margin="2" FontSize="15"/>
+            <Button x:Name="selectPokemon" Margin="2" FontSize="15" Click="selectPokemon_Click" Content="Select"/>
+        </StackPanel>
+        <Image Grid.Row="2" Grid.Column="2" x:Name="pokemonImage" HorizontalAlignment="Center"  Height="250" MinHeight="80" Stretch="Uniform"/>
+
+    </Grid>
+</Window>
