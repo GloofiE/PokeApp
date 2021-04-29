@@ -205,6 +205,16 @@ namespace WPFApp
                 await LoadImage(currentID.ToString());
             }
             await LoadData(pokeTypes[0], pokeTypes[1]);
+            nextPokemonButton.IsEnabled = false;
+            previousPokemonButton.IsEnabled = false;
+            if (currentID < maxPokeID)
+            {
+                nextPokemonButton.IsEnabled = true;
+            }
+            if(currentID >1)
+            {
+                previousPokemonButton.IsEnabled = true;
+            }
             inputText.Text = "";
         }
     }
