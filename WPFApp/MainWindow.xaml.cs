@@ -195,7 +195,7 @@ namespace WPFApp
 
         private async void selectPokemon_Click(object sender, RoutedEventArgs e)
         {
-            string userInput = inputText.Text.ToString();
+            string userInput = inputText.Text.ToString().ToLower();
             try
             {
                 await LoadImage(userInput);
